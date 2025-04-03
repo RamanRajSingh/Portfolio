@@ -1,3 +1,220 @@
-p {
-    color: blue;
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.head {
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
+
+}
+
+.head>.img {
+    display: none;
+}
+
+.head>.tabs {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    width: 60%;
+    font-size: 25px;
+}
+
+.head>.tabs>.tab {
+    justify-items: center;
+    color: #f0f8ff;
+    align-self: center;
+}
+
+.head>.tabs>.tab>.link {
+    text-decoration: none;
+    justify-items: center;
+    color: aliceblue;
+    align-self: center;
+    padding: 5px;
+}
+
+.head>.tabs>.tab:hover {
+    color: aqua;
+    background-color: gray;
+}
+
+.head>.icons {
+    list-style: none;
+    display: flex;
+}
+
+.head>.icons>.item {}
+
+.head>.icons>.item>.link {
+    display: flex;
+    position: relative;
+}
+
+.head>.icons>.item>.link>.resume {
+    height: 42px;
+    padding: 0px;
+
+}
+
+.head>.icons>.item>.link>.hide {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: azure;
+    padding: 5px;
+    z-index: 20;
+    white-space: nowrap;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.head>.icons>.item>.link>.resume:hover+.hide {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about {
+    font-size: 51px;
+    padding: 20px;
+    color: #3498db;
+    border: 2px black;
+    font-weight: bold;
+    display: inline-block;
+    animation: blink-cursor 0.7s steps(44) infinite normal;
+}
+
+/* Optional animation to make the cursor blink */
+@keyframes blink-cursor {
+    from {
+        border-right-color: rgba(0, 0, 0, 0.75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.lang {
+    font-size: 25px;
+    padding: 20px;
+    color: #3498db;
+    border: 2px black;
+    font-weight: bold;
+    display: inline-block;
+    animation: blink-cursor 0.7s steps(44) infinite normal;
+}
+
+.lang>.carousel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.lang>.carousel>.carousel-track {
+    display: flex;
+    animation: scroll 120s linear infinite;
+    width: max-content;
+    /* Ensure the track is wide enough to hold all images */
+}
+
+.lang>.carousel>.carousel-track img {
+    height: 150px;
+    /* Adjust the size as needed */
+    margin-right: 10px;
+}
+
+.footer {
+    background-color: rgb(34, 15, 51);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer>.first {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.footer>.first>.ref {
+    color: white;
+    text-decoration: none;
+    font-size: 100px;
+    padding: 10px;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.277);
+    border-radius: 10px;
+}
+
+.footer>.first>.link {
+    text-decoration: none;
+    color: white;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.footer>.first>.link:hover {
+    color: aqua;
+    background-color: gray;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 1000px) {
+    .head>.tabs {
+        display: none;
+        /* Hide tabs by default on smaller screens */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: blueviolet;
+        /* Match header background */
+        text-align: center;
+        z-index: 10;
+    }
+
+    .head>.tabs.active {
+        display: flex;
+        /* Show tabs when active class is present */
+    }
+
+    .head>.tabs>.tab {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .head>#hamburger {
+        /* Increased specificity */
+        display: block;
+        cursor: pointer;
+        height: 25px;
+    }
+}
+
+#hamburger {
+    display: none;
+    /* Ensure it's hidden by default */
 }
