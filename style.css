@@ -60,6 +60,12 @@ body {
 
 }
 
+/* hamburger code*/
+#hamburger {
+    display: none;
+    /* Ensure it's hidden by default */
+}
+
 .head>.icons>.item>.link>.hide {
     opacity: 0;
     transform: translateY(-10px);
@@ -206,15 +212,10 @@ body {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .head>#hamburger {
+    #hamburger {
         /* Increased specificity */
         display: block;
         cursor: pointer;
         height: 25px;
     }
-}
-
-#hamburger {
-    display: none;
-    /* Ensure it's hidden by default */
 }
